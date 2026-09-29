@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Finder Now - সকল রেজাল্ট এক জায়গায়</title>
+<style>
+body{margin:0;font-family:sans-serif;background:#0f172a;color:white;text-align:center}
+.header{background:#1e293b;padding:20px}
+.header h1{color:#38bdf8;margin:0}
+.box{background:white;color:#0f172a;max-width:400px;margin:30px auto;padding:20px;border-radius:15px}
+input,select,button{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ccc;box-sizing:border-box}
+button{background:#0ea5e9;color:white;border:none;font-weight:bold;font-size:16px}
+button:active{background:#0284c7}
+.link{background:#f1f5f9;padding:10px;border-radius:8px;margin-top:10px;display:block;text-decoration:none;color:#0f172a}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Result Finder Now</h1>
+<p>PSC • JSC • SSC • HSC • NU • সকল রেজাল্ট</p>
+</div>
+<div class="box">
+<h3>রেজাল্ট খুঁজুন</h3>
+<select id="exam">
+<option>SSC / Dakhil</option>
+<option>HSC / Alim</option>
+<option>JSC / JDC</option>
+<option>PSC / EBT</option>
+<option>National University</option>
+</select>
+<input id="roll" type="number" placeholder="রোল নম্বর লিখুন">
+<input id="reg" type="number" placeholder="রেজিস্ট্রেশন নম্বর (যদি থাকে)">
+<button onclick="findResult()">🔍 রেজাল্ট দেখুন</button>
+<div id="result"></div>
+<a class="link" href="https://eboardresults.com/v2/home" target="_blank">➡️ অফিসিয়াল সাইটে যান (eboardresults.com)</a>
+<a class="link" href="https://educationboardresults.gov.bd" target="_blank">➡️ educationboardresults.gov.bd</a>
+</div>
+<script>
+function findResult(){
+let roll=document.getElementById('roll').value;
+if(!roll){alert('ভাই রোল নম্বর লিখো!');return}
+let exam=document.getElementById('exam').value;
+document.getElementById('result').innerHTML='<p style="color:green">ভাই তোমার '+exam+' রোল '+roll+' এর জন্য অফিসিয়াল লিংকে ক্লিক করো। <br> সার্ভার বিজি থাকলে ২-৩ বার চেষ্টা করো।</p>';
+window.open('https://eboardresults.com/v2/home','_blank');
+}
+</script>
+</body>
+</html>
